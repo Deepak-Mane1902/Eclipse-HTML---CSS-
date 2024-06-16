@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solor Eclipse</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vh;
+            height: 100vh;
+            background: linear-gradient(to bottom, #f2c56572, #977630bb);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .universe{
+            width: 40vw;
+            aspect-ratio: 1;
+            background-color: rgba(236, 159, 16, 0.616);
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            animation: changebg 10s ease-in-out infinite;
+        }
+        @keyframes changebg {
+          0%{background-color:rgba(236, 159, 16, 0.616) ;}
+          25%{background-color: rgba(236, 159, 16, 0.616);}
+          50%{background-color:black ;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+             rgba(0, 0, 0, 0.2) 0px -3px 0px inset;}
+          75%{background-color: rgba(236, 159, 16, 0.616);}
+          100%{background-color:rgba(236, 159, 16, 0.616) ;}
+            
+        }
+        .sun{
+            width: 20vw;
+            aspect-ratio: 1;
+            background-color: rgb(234, 84, 15);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+
+            &::after{
+                content: " ";
+                position: absolute;
+                top:0;
+                left: 0;
+                width: inherit;
+                aspect-ratio: 1;
+                background-color: black;
+                border-radius: 50%;
+                animation: slide 10s ease-in-out infinite;
+            }
+        }
+        @keyframes slide {
+                0%{translate:100%;
+                    scale:1;}
+                50%{translate:0%;
+                    scale:0.95;}
+                100%{translate:-100%;
+                    scale:1;}
+                
+            }
+        
+
+    </style>
+</head>
+<body>
+    <div class="universe">
+        <div class="sun"></div>
+    </div>
+</body>
+</html>
